@@ -1,6 +1,7 @@
 #include "redmetro.h"
 
-redMetro::redMetro()
-{
+/*
+redMetro::redMetro() {
 
 }
+*/

@@ -1,6 +1,7 @@
 #include "lineametro.h"
 
-lineaMetro::lineaMetro()
+/*lineaMetro::lineaMetro()
 {
 
 }
+*/

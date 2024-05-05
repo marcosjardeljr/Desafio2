@@ -1,6 +1,7 @@
 #include "estacion.h"
 
-Estacion::Estacion()
+/*Estacion::Estacion()
 {
 
 }
+*/

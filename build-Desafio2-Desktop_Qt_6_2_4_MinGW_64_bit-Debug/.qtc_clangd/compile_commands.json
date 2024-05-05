@@ -30,7 +30,7 @@
         "-DQT_QML_DEBUG",
         "-DQT_CORE_LIB",
         "-I",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2",
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio",
         "-I",
         "C:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -62,10 +62,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2\\estacion.cpp"
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio\\estacion.cpp"
     ],
     "directory": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/build-Desafio2-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/Desafio2/estacion.cpp"
+    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Nueva carpeta/AUX-desafio/estacion.cpp"
 },
 {
     "arguments": [
@@ -98,7 +98,7 @@
         "-DQT_QML_DEBUG",
         "-DQT_CORE_LIB",
         "-I",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2",
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio",
         "-I",
         "C:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -130,10 +130,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2\\lineametro.cpp"
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio\\lineametro.cpp"
     ],
     "directory": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/build-Desafio2-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/Desafio2/lineametro.cpp"
+    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Nueva carpeta/AUX-desafio/lineametro.cpp"
 },
 {
     "arguments": [
@@ -166,7 +166,7 @@
         "-DQT_QML_DEBUG",
         "-DQT_CORE_LIB",
         "-I",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2",
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio",
         "-I",
         "C:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -198,10 +198,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2\\main.cpp"
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio\\main.cpp"
     ],
     "directory": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/build-Desafio2-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/Desafio2/main.cpp"
+    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Nueva carpeta/AUX-desafio/main.cpp"
 },
 {
     "arguments": [
@@ -234,7 +234,7 @@
         "-DQT_QML_DEBUG",
         "-DQT_CORE_LIB",
         "-I",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2",
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio",
         "-I",
         "C:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -266,10 +266,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2\\redmetro.cpp"
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio\\redmetro.cpp"
     ],
     "directory": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/build-Desafio2-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/Desafio2/redmetro.cpp"
+    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Nueva carpeta/AUX-desafio/redmetro.cpp"
 },
 {
     "arguments": [
@@ -302,7 +302,7 @@
         "-DQT_QML_DEBUG",
         "-DQT_CORE_LIB",
         "-I",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2",
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio",
         "-I",
         "C:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -334,10 +334,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2\\estacion.h"
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio\\estacion.h"
     ],
     "directory": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/build-Desafio2-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/Desafio2/estacion.h"
+    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Nueva carpeta/AUX-desafio/estacion.h"
 },
 {
     "arguments": [
@@ -370,7 +370,7 @@
         "-DQT_QML_DEBUG",
         "-DQT_CORE_LIB",
         "-I",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2",
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio",
         "-I",
         "C:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -402,10 +402,10 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2\\lineametro.h"
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio\\lineametro.h"
     ],
     "directory": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/build-Desafio2-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/Desafio2/lineametro.h"
+    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Nueva carpeta/AUX-desafio/lineametro.h"
 },
 {
     "arguments": [
@@ -438,7 +438,7 @@
         "-DQT_QML_DEBUG",
         "-DQT_CORE_LIB",
         "-I",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2",
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio",
         "-I",
         "C:\\Qt\\6.2.4\\mingw_64\\include",
         "-I",
@@ -470,9 +470,9 @@
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
         "-fno-delayed-template-parsing",
-        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Desafio-2\\Desafio2\\Desafio2\\redmetro.h"
+        "C:\\Users\\Usuario\\Documents\\Universidad\\Semestre 2024-1\\Teoria\\Nueva carpeta\\AUX-desafio\\redmetro.h"
     ],
     "directory": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/build-Desafio2-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Desafio-2/Desafio2/Desafio2/redmetro.h"
+    "file": "C:/Users/Usuario/Documents/Universidad/Semestre 2024-1/Teoria/Nueva carpeta/AUX-desafio/redmetro.h"
 }
 ]
