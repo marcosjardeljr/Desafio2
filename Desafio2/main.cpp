@@ -42,17 +42,6 @@ void mostrarMenu() {
         switch(opcion) {
             case 'A':
             {
-                cout << "Ingrese el nombre de la línea: ";
-                getline(cin, nombreLinea);
-                cout << "Ingrese el nombre de la estación: ";
-                getline(cin, nombreEstacion);
-                cout << "Ingrese la posición (ingrese -1 para añadir al final): ";
-                cin >> posicion;
-                lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
-                if (linea != nullptr) {
-
-                    //////////////////////
-                }
                 break;
             }
             case 'B':
@@ -73,6 +62,12 @@ void mostrarMenu() {
             }
             case 'F':
             {
+                cout << "Ingrese el nombre de la nueva linea: ";
+                cin.ignore();
+                getline(cin, nombreLinea);
+                lineaMetro* nuevaLinea = new lineaMetro(nombreLinea);
+                redMetro.agregarLinea(nuevaLinea);
+                cout << "Linea agregada correctamente.\n";
                 break;
             }
             case 'G':
