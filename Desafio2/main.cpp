@@ -4,7 +4,7 @@ Marcos Jardel Murillo Hernandez  -  C.C.1017238240
 Juan David Escalante Fonseca  -  C.C. 1054091027
 */
 
-#include "redMetro.h"
+#include "redmetro.h"
 #include <iostream>
 
 
@@ -21,8 +21,8 @@ int main()
 
 void mostrarMenu() {
     redMetro redMetro;
-    char nombreLinea[100];
-    char nombreEstacion[100];
+    string nombreLinea;
+    string nombreEstacion;
     int posicion;
     char opcion;
     do {
@@ -43,18 +43,15 @@ void mostrarMenu() {
             case 'A':
             {
                 cout << "Ingrese el nombre de la línea: ";
-                cin.getline(nombreLinea, 100);
+                getline(cin, nombreLinea);
                 cout << "Ingrese el nombre de la estación: ";
-                cin.getline(nombreEstacion, 100);
+                getline(cin, nombreEstacion);
                 cout << "Ingrese la posición (ingrese -1 para añadir al final): ";
                 cin >> posicion;
                 lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
                 if (linea != nullptr) {
-                    /*Estacion* estacion = new Estacion(nombreEstacion);
-                    linea->agregarEstacion(estacion, posicion);
-                    cout << "Estación agregada correctamente.\n";
-                } else {
-                    cout << "Línea no encontrada.\n";*/
+
+                    //////////////////////
                 }
                 break;
             }

@@ -1,14 +1,18 @@
 #ifndef ESTACION_H
 #define ESTACION_H
+#include <string>
+
+using namespace std;
 
 class Estacion {
 private:
-    char* nombre;
+    string nombre;
     bool esTransferencia;
 
 public:
-    Estacion(const char* nom, bool transferencia = false);
-    ~Estacion();
+    Estacion(const string& nom, bool transferencia = false); // Check this declaration
+    const string& getNombre() const;
+    bool esEstacionDeTransferencia() const;
 };
 
-#endif
+#endif // ESTACION_H

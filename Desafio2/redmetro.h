@@ -1,7 +1,10 @@
 #ifndef REDMETRO_H
 #define REDMETRO_H
 #include <lineametro.h>
+#include<iostream>
+#include<cstring>
 
+using namespace std;
 class redMetro
 {
 private:
@@ -12,10 +15,10 @@ public:
     redMetro();
     ~redMetro();
     bool agregarLinea(lineaMetro* linea);
-    bool eliminarLinea(const char* nom);
+    bool eliminarLinea(const string& nom);
     int getTotalEstaciones() const;
     int getCantidadLineas() const;
-    lineaMetro* buscarLinea(const char* nombre) const;
+    lineaMetro* buscarLinea(const string& nombre) const;
 };
 
 #endif // REDMETRO_H
