@@ -1,11 +1,14 @@
 #ifndef ESTACION_H
 #define ESTACION_H
 
+class Estacion {
+private:
+    char* nombre;
+    bool esTransferencia;
 
-class Estacion
-{
 public:
-    Estacion();
+    Estacion(const char* nom, bool transferencia = false);
+    ~Estacion();
 };
 
-#endif // ESTACION_H
+#endif

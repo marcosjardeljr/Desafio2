@@ -4,11 +4,26 @@ Marcos Jardel Murillo Hernandez  -  C.C.1017238240
 Juan David Escalante Fonseca  -  C.C. 1054091027
 */
 
+#include "redMetro.h"
 #include <iostream>
+
+
+void mostrarMenu();
 using namespace std;
 
 int main()
 {
+
+    mostrarMenu();
+    return 0;
+}
+
+
+void mostrarMenu() {
+    redMetro redMetro;
+    char nombreLinea[100];
+    char nombreEstacion[100];
+    int posicion;
     char opcion;
     do {
         cout << "Seleccione una opcion:" << endl;
@@ -27,6 +42,20 @@ int main()
         switch(opcion) {
             case 'A':
             {
+                cout << "Ingrese el nombre de la línea: ";
+                cin.getline(nombreLinea, 100);
+                cout << "Ingrese el nombre de la estación: ";
+                cin.getline(nombreEstacion, 100);
+                cout << "Ingrese la posición (ingrese -1 para añadir al final): ";
+                cin >> posicion;
+                lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
+                if (linea != nullptr) {
+                    /*Estacion* estacion = new Estacion(nombreEstacion);
+                    linea->agregarEstacion(estacion, posicion);
+                    cout << "Estación agregada correctamente.\n";
+                } else {
+                    cout << "Línea no encontrada.\n";*/
+                }
                 break;
             }
             case 'B':
@@ -70,6 +99,4 @@ int main()
         }
     } while(opcion != 'X');
 
-
-    return 0;
 }
