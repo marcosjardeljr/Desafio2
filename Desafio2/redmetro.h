@@ -19,6 +19,7 @@ public:
     int getTotalEstaciones() const;
     int getCantidadLineas() const;
     lineaMetro* buscarLinea(const string& nombre) const;
+    void mostrarLineas() const;
 };
 
 #endif // REDMETRO_H

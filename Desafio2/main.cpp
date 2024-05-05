@@ -23,7 +23,7 @@ void mostrarMenu() {
     redMetro redMetro;
     string nombreLinea;
     string nombreEstacion;
-    int posicion;
+    //int posicion;
     char opcion;
     do {
         cout << "Seleccione una opcion:" << endl;
@@ -50,6 +50,8 @@ void mostrarMenu() {
             }
             case 'C':
             {
+                cout << "La red tiene " << redMetro.getCantidadLineas() << " lineas.\n";
+                redMetro.mostrarLineas();
                 break;
             }
             case 'D':
@@ -65,9 +67,15 @@ void mostrarMenu() {
                 cout << "Ingrese el nombre de la nueva linea: ";
                 cin.ignore();
                 getline(cin, nombreLinea);
+                if (redMetro.buscarLinea(nombreLinea) != nullptr)
+                {
+                cout << "Error: Una linea con ese nombre ya existe. Intente nuevamente con un nombre diferente." << endl;
+                } else
+                {
                 lineaMetro* nuevaLinea = new lineaMetro(nombreLinea);
                 redMetro.agregarLinea(nuevaLinea);
-                cout << "Linea agregada correctamente.\n";
+                cout << "Linea agregada correctamente." << endl;
+                }
                 break;
             }
             case 'G':

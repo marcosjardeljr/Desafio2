@@ -1,5 +1,5 @@
 #include "lineametro.h"
-
+#include <iostream>
 
 lineaMetro::lineaMetro
 (const string& nom) : nombre(nom), estaciones(nullptr), cantidadEstaciones(0), capacidadEstaciones(0)
@@ -14,5 +14,10 @@ lineaMetro::~lineaMetro() {
     }
     delete[] estaciones;
 }
+
+const string& lineaMetro::getNombre() const {
+    return nombre;
+}
+
 
 
