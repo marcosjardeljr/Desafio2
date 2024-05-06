@@ -48,3 +48,25 @@ void redMetro::mostrarLineas() const {
     }
 }
 
+bool redMetro::eliminarLinea(const string& nom){
+    for (int i = 0; i < cantidadLineas; ++i) {
+        if (lineas[i]->getNombre() == nom) {
+            delete lineas[i];
+            for (int j = i; j < cantidadLineas - 1; ++j) {
+                lineas[j] = lineas[j + 1];
+            }
+            cantidadLineas--;
+            return true;
+        }
+    }
+    return false;
+}
+
+lineaMetro* redMetro::buscarLineaPorIndice(int index) const {
+    if (index >= 0 && index < cantidadLineas) {
+        return lineas[index];
+    }
+    return nullptr;
+}
+
+
