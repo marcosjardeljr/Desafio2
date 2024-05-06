@@ -22,6 +22,7 @@ public:
     lineaMetro* buscarLinea(const string& nombre) const;
     lineaMetro* buscarLineaPorIndice(int index) const;
     void mostrarLineas() const;
+
 };
 
 #endif // REDMETRO_H

@@ -69,4 +69,10 @@ lineaMetro* redMetro::buscarLineaPorIndice(int index) const {
     return nullptr;
 }
 
-
+int redMetro::getTotalEstaciones() const {
+    int total = 0;
+    for (int i = 0; i < cantidadLineas; ++i) {
+        total += lineas[i]->getCantidadEstaciones();
+    }
+    return total;
+}
