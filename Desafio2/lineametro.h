@@ -19,6 +19,8 @@ public:
     int getCantidadEstaciones() const;
     bool contieneEstacion(const string& nom) const;
     const string& getNombre() const;
+    void imprimirEstaciones() const;
+    Estacion* getEstacion(int index) const;
 };
 
 #endif // LINEAMETRO_H

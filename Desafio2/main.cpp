@@ -42,10 +42,44 @@ void mostrarMenu() {
         switch(opcion) {
             case 'A':
             {
+                int posicion;
+                cout << "Ingrese el nombre de la linea: ";
+                cin.ignore();
+                getline(cin, nombreLinea);
+                cout << "Ingrese el nombre de la estacion: ";
+                getline(cin, nombreEstacion);
+                cout << "Ingrese la posicion: ";
+                cin >> posicion;
+                cin.ignore();
+                lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
+                if (linea != nullptr) {
+                    Estacion* estacion = new Estacion(nombreEstacion);
+                    linea->agregarEstacion(estacion, posicion);
+                    cout << "Estacion agregada correctamente.\n";
+                    linea->imprimirEstaciones(); // Imprimir estaciones con sus posiciones
+                } else {
+                    cout << "Línea no encontrada.\n";
+                }
                 break;
             }
             case 'B':
             {
+                cout << "Ingrese el nombre de la linea de la cual eliminar la estacion: ";
+                getline(cin, nombreLinea);
+                cin.ignore();
+                cout << "Ingrese el nombre de la estacion a eliminar: ";
+                getline(cin, nombreEstacion);
+                cin.ignore();
+                lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
+                if (linea != nullptr) {
+                    if (linea->eliminarEstacion(nombreEstacion)) {
+                        cout << "Estacion eliminada correctamente.\n";
+                    } else {
+                        cout << "No se pudo eliminar la estacion.\n";
+                    }
+                } else {
+                    cout << "Linea no encontrada.\n";
+                }
                 break;
             }
             case 'C':
@@ -56,10 +90,35 @@ void mostrarMenu() {
             }
             case 'D':
             {
+                cout << "Ingrese el nombre de la linea: ";
+                cin.ignore();
+                getline(cin, nombreLinea);
+                lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
+                if (linea != nullptr) {
+                    cout << "La linea " << nombreLinea << " tiene " << linea->getCantidadEstaciones() << " estaciones.\n";
+                } else {
+                    cout << "Linea no encontrada.\n";
+                }
                 break;
             }
             case 'E':
             {
+                cout << "Ingrese el nombre de la estación: ";
+                cin.ignore();
+                getline(cin, nombreEstacion);
+                cout << "Ingrese el nombre de la linea: ";
+                cin.ignore();
+                getline(cin, nombreLinea);
+                lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
+                if (linea != nullptr) {
+                    if (linea->contieneEstacion(nombreEstacion)) {
+                        cout << "La estacion " << nombreEstacion << " pertenece a la linea " << nombreLinea << ".\n";
+                    } else {
+                        cout << "La estación no pertenece a la línea.\n";
+                    }
+                } else {
+                    cout << "Línea no encontrada.\n";
+                }
                 break;
             }
             case 'F':
@@ -93,6 +152,7 @@ void mostrarMenu() {
             }
             case 'H':
             {
+                cout << "La red tiene un total de " << redMetro.getTotalEstaciones() << " estaciones.\n";
                 break;
             }
             case 'I':
@@ -104,7 +164,7 @@ void mostrarMenu() {
                 break;
             }
             default:
-                cout << "Opción no valida. Por favor, seleccione una opcion valida." << endl;
+                cout << "Opcion no valida. Por favor, seleccione una opcion valida." << endl;
         }
     } while(opcion != 'X');
 

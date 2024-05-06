@@ -10,9 +10,10 @@ private:
     bool esTransferencia;
 
 public:
-    Estacion(const string& nom, bool transferencia = false);
+    Estacion(const std::string& nom);
     const string& getNombre() const;
     bool esEstacionDeTransferencia() const;
+    void marcarComoTransferencia();
 };
 
 #endif // ESTACION_H
