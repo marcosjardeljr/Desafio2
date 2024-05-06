@@ -80,6 +80,15 @@ void mostrarMenu() {
             }
             case 'G':
             {
+                cout << "Ingrese el nombre de la linea a eliminar: ";
+                cin.ignore();
+                getline(cin, nombreLinea);
+                if (redMetro.eliminarLinea(nombreLinea)) {
+                    cout << "Linea eliminada correctamente.";
+                } else {
+                    cout << "No se pudo eliminar la linea (puede tener estaciones o no existir).";
+                }
+
                 break;
             }
             case 'H':
