@@ -28,3 +28,23 @@ bool redMetro::agregarLinea(lineaMetro* linea) {
     return true;
 }
 
+int redMetro::getCantidadLineas() const {
+    return cantidadLineas;  // Asume que tienes una variable miembro cantidadLineas que manejas adecuadamente.
+}
+
+lineaMetro* redMetro::buscarLinea(const string& nombre) const {
+    for (int i = 0; i < cantidadLineas; ++i) {
+        if (lineas[i]->getNombre() == nombre) {
+            return lineas[i];
+        }
+    }
+    return nullptr;  // Retorna nullptr si no se encuentra la línea con el nombre dado.
+}
+
+void redMetro::mostrarLineas() const {
+    cout << "Lineas disponibles en la red de metro:\n";
+    for (int i = 0; i < cantidadLineas; ++i) {
+        cout << (i + 1) << ". " << lineas[i]->getNombre() << "\n";
+    }
+}
+

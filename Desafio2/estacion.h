@@ -10,7 +10,7 @@ private:
     bool esTransferencia;
 
 public:
-    Estacion(const string& nom, bool transferencia = false); // Check this declaration
+    Estacion(const string& nom, bool transferencia = false);
     const string& getNombre() const;
     bool esEstacionDeTransferencia() const;
 };
