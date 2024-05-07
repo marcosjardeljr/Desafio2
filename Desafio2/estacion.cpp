@@ -12,7 +12,7 @@ const string& Estacion::getNombre() const {
 
 /*
 Estacion::Estacion(const std::string& nom, bool transferencia) {
-    nombre = nom;
+    nombre = //nom;
     esTransferencia = transferencia;
 }
 */

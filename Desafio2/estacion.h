@@ -10,7 +10,7 @@ private:
     bool esTransferencia;
 
 public:
-    Estacion(const std::string& nom);
+    Estacion(const string& nom);
     const string& getNombre() const;
     bool esEstacionDeTransferencia() const;
     void marcarComoTransferencia();
