@@ -70,5 +70,20 @@ int redMetro::getTotalEstaciones() const {
     return total;
 }
 
+lineaMetro* redMetro::buscarLineaPorIndice(int index) const {
+    if (index >= 0 && index < cantidadLineas) {
+        return lineas[index];
+    }
+    return nullptr;
+}
+
+bool redMetro::lineaExiste(const std::string& nombre) const {
+    for (int i = 0; i < cantidadLineas; ++i) {
+        if (lineas[i]->getNombre() == nombre) {
+            return true;
+        }
+    }
+    return false;
+}
 
 

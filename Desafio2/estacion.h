@@ -13,6 +13,8 @@ public:
     Estacion(const string& nom, bool transferencia = false);
     const string& getNombre() const;
     bool esEstacionDeTransferencia() const;
+    void marcarComoTransferencia();
+
 };
 
 #endif // ESTACION_H

@@ -20,6 +20,8 @@ public:
     int getCantidadLineas() const;
     lineaMetro* buscarLinea(const string& nombre) const;
     void mostrarLineas() const;
+    lineaMetro* buscarLineaPorIndice(int index) const;
+    bool lineaExiste(const string& nombre) const;
 };
 
 #endif // REDMETRO_H

@@ -25,6 +25,7 @@ void mostrarMenu() {
     string nombreEstacion;
     int posicion;
     char opcion;
+    bool conexionEstablecida = false;
     do {
         cout << "Seleccione una opcion:" << endl;
         cout << "A. Agregar una estacion a una linea." << endl;
@@ -136,7 +137,7 @@ void mostrarMenu() {
                 cin.ignore();
                 getline(cin, nombreEstacion);
                 cout << "Ingrese el nombre de la linea: ";
-                cin.ignore();
+                //cin.ignore();
                 getline(cin, nombreLinea);
                 lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
                 if (linea != nullptr)
@@ -158,7 +159,71 @@ void mostrarMenu() {
             }
             case 'F':
             {
+            bool nombreValido = false;
+            do {
                 cout << "Ingrese el nombre de la nueva linea: ";
+                cin.ignore();
+                getline(cin, nombreLinea);
+                if (redMetro.lineaExiste(nombreLinea)) {
+                    cout << "Una linea con ese nombre ya existe. Por favor, elija un nombre diferente." << endl;
+                } else {
+                    nombreValido = true;
+                }
+            } while (!nombreValido);
+            lineaMetro* nuevaLinea = new lineaMetro(nombreLinea);
+            if (redMetro.getCantidadLineas() > 0) {
+                cout << "Líneas disponibles para conectar:\n";
+                for (int i = 0; i < redMetro.getCantidadLineas(); ++i) {
+                    cout << i + 1 << ". " << redMetro.buscarLineaPorIndice(i)->getNombre() << "\n";
+                }
+                cout << "Seleccione el número de línea para conectar: ";
+                int indiceLinea;
+                cin >> indiceLinea;
+                cin.ignore();
+
+                if (indiceLinea > 0 && indiceLinea <= redMetro.getCantidadLineas()) {
+                    lineaMetro* lineaConectar = redMetro.buscarLineaPorIndice(indiceLinea - 1);
+                    if (lineaConectar->getCantidadEstaciones() > 0) {
+                        cout << "Estaciones disponibles en " << lineaConectar->getNombre() << ":\n";
+                        for (int j = 0; j < lineaConectar->getCantidadEstaciones(); ++j) {
+                            cout << j + 1 << ". " << lineaConectar->getEstacion(j)->getNombre() << "\n";
+                        }
+                        cout << "Seleccione el número de estación para conectar como estación de transferencia: ";
+                        int indiceEstacion;
+                        cin >> indiceEstacion;
+                        cin.ignore();
+
+                        if (indiceEstacion > 0 && indiceEstacion <= lineaConectar->getCantidadEstaciones()) {
+                            Estacion* estacionConectar = lineaConectar->getEstacion(indiceEstacion - 1);
+                            estacionConectar->marcarComoTransferencia();
+                            nuevaLinea->agregarEstacion(new Estacion(estacionConectar->getNombre(), true));
+                            cout << "Estación de transferencia establecida y agregada a la nueva línea.\n";
+                            conexionEstablecida = true;
+                        } else {
+                            cout << "Número de estación no válido.\n";
+                        }
+                    } else {
+                        cout << "No hay estaciones disponibles en " << lineaConectar->getNombre() << " para establecer como de transferencia.\n";
+                    }
+                } else {
+                    cout << "Número de línea no válido.\n";
+                }
+            } else {
+                cout << "No hay líneas existentes. La nueva línea se agregará sin necesidad de conexión de transferencia.\n";
+                conexionEstablecida = true;  // Permitir la creación de la primera línea sin conexión.
+            }
+
+            // Solo agregar la línea si se ha establecido una conexión válida o es la primera línea.
+            if (conexionEstablecida) {
+                redMetro.agregarLinea(nuevaLinea);
+                cout << "Línea agregada correctamente.\n";
+            } else {
+                delete nuevaLinea;  // Limpia la memoria si la línea no se agrega.
+                cout << "La nueva línea no fue agregada debido a la falta de una conexión válida.\n";
+            }
+                 break;
+            }
+                /*cout << "Ingrese el nombre de la nueva linea: ";
                 cin.ignore();
                 getline(cin, nombreLinea);
                 if (redMetro.buscarLinea(nombreLinea) != nullptr)
@@ -171,8 +236,9 @@ void mostrarMenu() {
                     redMetro.agregarLinea(nuevaLinea);
                     cout << "Linea agregada correctamente." << endl;
                 }
-                break;
-            }
+                break;*/
+
+
             case 'G':
             {
                 cout << "Ingrese el nombre de la linea: ";
