@@ -88,5 +88,9 @@ Estacion* lineaMetro::getEstacion(int index) const{
         return nullptr;
     }
 
-
+void lineaMetro::setTiempoEntreEstaciones(int index, int tiempo) {
+    if (index >= 0 && index < numEstaciones - 1) {
+        tiempos[index] = tiempo;
+    }
+}
 

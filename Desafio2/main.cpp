@@ -36,6 +36,7 @@ void mostrarMenu() {
         cout << "F. Agregar una linea a la red Metro." << endl;
         cout << "G. Eliminar una linea de la red Metro." << endl;
         cout << "H. Saber cuantas estaciones tiene la red Metro." << endl;
+        cout << "I. tiempo entre estaciones." << endl;
         cout << "X. Salir." << endl;
         cout << "Ingrese su opcion: ";
         cin >> opcion;
@@ -43,6 +44,8 @@ void mostrarMenu() {
         switch(opcion) {
             case 'A':
             {
+                int posicion, tiempo;
+
                 cout << "Ingrese el nombre de la linea: ";
                 cin.ignore();
                 getline(cin, nombreLinea);
@@ -50,38 +53,31 @@ void mostrarMenu() {
                 getline(cin, nombreEstacion);
                 cout << "Ingrese la posicion (ingrese -1 para agregar al final): ";
                 cin >> posicion;
+
                 lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
-                if (linea != nullptr)
-                {
-                    if (!linea->estacionExiste(nombreEstacion))
-                    {
-                        if (linea->esPosicionValida(posicion))
-                        {
-                        Estacion* estacion = new Estacion(nombreEstacion);
-                            if (linea->agregarEstacion(estacion, posicion))
-                            {
+                if (linea != nullptr) {
+                    if (!linea->estacionExiste(nombreEstacion)) {
+                        if (linea->esPosicionValida(posicion)) {
+                            Estacion* estacion = new Estacion(nombreEstacion);
+                            if (linea->agregarEstacion(estacion, posicion)) {
                                 cout << "Estacion agregada correctamente.\n";
+                                cout << "Ingrese tiempo en segundos hasta la siguiente estacion: ";
+                                cin >> tiempo;
+                                linea->setTiempoEntreEstaciones(posicion, tiempo);
+                            } else {
+                                cout << "Error al agregar la estacion.\n";
+                                delete estacion;
                             }
-                        else
-                        {
-                            cout << "Error al agregar la estacion.";
-                            delete estacion;
-                        }
-                    }
-                        else
-                        {
+                        } else {
                             cout << "La posicion no es valida.\n";
                         }
+                    } else {
+                        cout << "La estacion ya existe.\n";
                     }
-                    else
-                    {
-                        cout << "La posicion no es valida.\n";
-                    }
-                }
-                else
-                {
+                } else {
                     cout << "Linea no encontrada.\n";
                 }
+
             break;
             }
             case 'B':
