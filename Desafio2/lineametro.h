@@ -9,6 +9,8 @@ private:
     Estacion** estaciones;
     int cantidadEstaciones;
     int capacidadEstaciones;
+    int tiempos[17];  // Tiempos entre estaciones consecutivas
+    int numEstaciones;
 
 public:
     lineaMetro(const string& nom);
@@ -21,6 +23,7 @@ public:
     bool estacionExiste(const std::string& nom) const;
     bool esPosicionValida(int posicion) const;
     Estacion* getEstacion(int index) const;
+    void setTiempoEntreEstaciones(int index, int tiempo);
 };
 
 #endif // LINEAMETRO_H
