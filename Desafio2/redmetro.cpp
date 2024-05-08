@@ -62,13 +62,6 @@ bool redMetro::eliminarLinea(const string& nom){
     return false;
 }
 
-lineaMetro* redMetro::buscarLineaPorIndice(int index) const {
-    if (index >= 0 && index < cantidadLineas) {
-        return lineas[index];
-    }
-    return nullptr;
-}
-
 int redMetro::getTotalEstaciones() const {
     int total = 0;
     for (int i = 0; i < cantidadLineas; ++i) {
@@ -76,3 +69,6 @@ int redMetro::getTotalEstaciones() const {
     }
     return total;
 }
+
+
+

@@ -19,23 +19,9 @@ const string& lineaMetro::getNombre() const {
     return nombre;
 }
 
-void lineaMetro::imprimirEstaciones() const {
-    cout << "Estaciones en la linea " << nombre << ":\n";
-    for (int i = 0; i < cantidadEstaciones; ++i) {
-        if (estaciones[i] != nullptr) {
-            cout << i + 1 << ". " << estaciones[i]->getNombre() << "\n";
-        } else {
-            cout << i + 1 << ". [Estacion no disponible]\n";
-        }
-    }
-    if (cantidadEstaciones == 0) {
-        cout << "No hay estaciones en esta linea.\n";
-    }
-}
-
 bool lineaMetro::agregarEstacion(Estacion* estacion, int posicion) {
     if (posicion < 0 || posicion > cantidadEstaciones) {
-        posicion = cantidadEstaciones; // Agregar al final si la posición no es válida
+        posicion = cantidadEstaciones;
     }
     if (cantidadEstaciones == capacidadEstaciones) {
         capacidadEstaciones *= 2;
@@ -53,8 +39,8 @@ bool lineaMetro::agregarEstacion(Estacion* estacion, int posicion) {
     cantidadEstaciones++;
     return true;
 }
-/*
-bool lineaMetro::contieneEstacion(const string& nom) const {
+
+bool lineaMetro::estacionExiste(const string& nom) const {
     for (int i = 0; i < cantidadEstaciones; ++i) {
         if (estaciones[i]->getNombre() == nom) {
             return true;
@@ -62,34 +48,32 @@ bool lineaMetro::contieneEstacion(const string& nom) const {
     }
     return false;
 }
-*/
-bool lineaMetro::contieneEstacion(const string& nombreEstacion) const {
-    for (int i = 0; i < cantidadEstaciones; ++i) {
-        if (estaciones[i]->getNombre() == nombreEstacion) {
-            return true;
-        }
-    }
-    return false;
-}
 
-Estacion* lineaMetro::getEstacion(int index) const {
-    if (index >= 0 && index < cantidadEstaciones) {
-        return estaciones[index];
-    }
-    return nullptr;
-}
-int lineaMetro::getCantidadEstaciones() const {
-    return cantidadEstaciones;
+bool lineaMetro::esPosicionValida(int posicion) const {
+    return (posicion >= 0 && posicion <= cantidadEstaciones) || posicion == -1;
 }
 
 bool lineaMetro::eliminarEstacion(const string& nom) {
     for (int i = 0; i < cantidadEstaciones; ++i) {
-        if (estaciones[i]->getNombre() == nom) {
+        if (estaciones[i]->getNombre() == nom && !estaciones[i]->esEstacionDeTransferencia()) {
             delete estaciones[i];
             for (int j = i; j < cantidadEstaciones - 1; ++j) {
                 estaciones[j] = estaciones[j + 1];
             }
             cantidadEstaciones--;
+            return true;
+        }
+    }
+    return false;
+}
+
+int lineaMetro::getCantidadEstaciones() const {
+    return cantidadEstaciones;
+}
+
+bool lineaMetro::contieneEstacion(const string& nombreEstacion) const {
+    for (int i = 0; i < cantidadEstaciones; ++i) {
+        if (estaciones[i]->getNombre() == nombreEstacion) {
             return true;
         }
     }
