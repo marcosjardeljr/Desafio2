@@ -13,3 +13,8 @@ const string& Estacion::getNombre() const {
 bool Estacion::esEstacionDeTransferencia() const {
     return esTransferencia;
 }
+
+
+void Estacion::marcarComoTransferencia() {
+        esTransferencia = true;
+    }

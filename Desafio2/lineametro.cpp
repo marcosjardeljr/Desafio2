@@ -1,6 +1,7 @@
 #include "lineametro.h"
 #include <iostream>
 
+
 lineaMetro::lineaMetro
 (const string& nom) : nombre(nom), estaciones(nullptr), cantidadEstaciones(0), capacidadEstaciones(0)
 {
@@ -79,3 +80,13 @@ bool lineaMetro::contieneEstacion(const string& nombreEstacion) const {
     }
     return false;
 }
+
+Estacion* lineaMetro::getEstacion(int index) const{
+        if (index >= 0 && index < cantidadEstaciones) {
+            return estaciones[index];
+        }
+        return nullptr;
+    }
+
+
+

@@ -1,6 +1,5 @@
 #ifndef LINEAMETRO_H
 #define LINEAMETRO_H
-
 #include <estacion.h>
 #include <string>
 
@@ -21,6 +20,7 @@ public:
     const string& getNombre() const;
     bool estacionExiste(const std::string& nom) const;
     bool esPosicionValida(int posicion) const;
+    Estacion* getEstacion(int index) const;
 };
 
 #endif // LINEAMETRO_H
