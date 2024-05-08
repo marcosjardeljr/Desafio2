@@ -24,6 +24,7 @@ public:
     bool esPosicionValida(int posicion) const;
     Estacion* getEstacion(int index) const;
     void setTiempoEntreEstaciones(int index, int tiempo);
+    int calcularTiempoDeLlegada(const string& origen, const string& destino) const;
 };
 
 #endif // LINEAMETRO_H

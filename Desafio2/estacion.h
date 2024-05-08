@@ -8,12 +8,15 @@ class Estacion {
 private:
     string nombre;
     bool esTransferencia;
+    int tiempoHastaSiguiente;
 
 public:
-    Estacion(const string& nom, bool transferencia = false);
+    Estacion(const string& nom, bool transferencia = false, int tiempoSiguiente = 0);
     const string& getNombre() const;
     bool esEstacionDeTransferencia() const;
     void marcarComoTransferencia();
+    int getTiempoHastaSiguiente() const;
+    void setTiempoHastaSiguiente(int tiempo);
 
 };
 

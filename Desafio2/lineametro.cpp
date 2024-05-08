@@ -3,9 +3,8 @@
 
 
 lineaMetro::lineaMetro
-(const string& nom) : nombre(nom), estaciones(nullptr), cantidadEstaciones(0), capacidadEstaciones(0)
+(const string& nom) : nombre(nom), estaciones(nullptr), cantidadEstaciones(0), capacidadEstaciones(5)
 {
-    capacidadEstaciones = 5;
     estaciones = new Estacion*[capacidadEstaciones];
 }
 
@@ -94,3 +93,21 @@ void lineaMetro::setTiempoEntreEstaciones(int index, int tiempo) {
     }
 }
 
+int lineaMetro::calcularTiempoDeLlegada(const std::string& origen, const std::string& destino) const {
+    int tiempoTotal = 0;
+    bool empezarConteo = false;
+
+    for (int i = 0; i < cantidadEstaciones; i++) {
+        if (estaciones[i]->getNombre() == origen) {
+            empezarConteo = true;
+        }
+        if (empezarConteo) {
+            if (estaciones[i]->getNombre() == destino) {
+                break;
+            }
+            tiempoTotal += estaciones[i]->getTiempoHastaSiguiente();
+        }
+    }
+
+    return tiempoTotal;
+}
