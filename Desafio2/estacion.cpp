@@ -1,30 +1,15 @@
 #include "estacion.h"
+#include <cstring>
+using namespace std;
 
-/*Estacion::Estacion()
-{
+Estacion::Estacion(const string& nom, bool transferencia) : nombre(nom), esTransferencia(transferencia) {
 
 }
-*/
+
 const string& Estacion::getNombre() const {
     return nombre;
 }
-//Estacion::Estacion(const string&// nom)  {}
-
-/*
-Estacion::Estacion(const std::string& nom, bool transferencia) {
-    nombre = //nom;
-    esTransferencia = transferencia;
-}
-*/
-Estacion::Estacion(const std::string& nom) : nombre(nom) {}
-
 
 bool Estacion::esEstacionDeTransferencia() const {
     return esTransferencia;
 }
-
-void Estacion::marcarComoTransferencia() {
-    esTransferencia = true;
-}
-
-
