@@ -6,7 +6,7 @@ Juan David Escalante Fonseca  -  C.C. 1054091027
 
 #include "redmetro.h"
 #include <iostream>
-
+#include "lineametro.h"
 
 void mostrarMenu();
 using namespace std;
@@ -23,6 +23,7 @@ void mostrarMenu() {
     redMetro redMetro;
     string nombreLinea;
     string nombreEstacion;
+    string origen, destino;
     int posicion;
     char opcion;
     bool conexionEstablecida = false;
@@ -256,7 +257,30 @@ void mostrarMenu() {
             }
             case 'I':
             {
-                break;
+
+            cout << "Ingrese el nombre de la linea para calcular el tiempo entre estaciones: ";
+                    cin.ignore();  // Asegurarse de limpiar el buffer para una entrada limpia
+                    getline(cin, nombreLinea);
+                    lineaMetro* linea = redMetro.buscarLinea(nombreLinea);
+                    linea = redMetro.buscarLinea(nombreLinea);  // Obtener la línea correcta
+
+                    if (linea != nullptr) {
+                        cout << "Ingrese el nombre de la estación de origen: ";
+                        getline(cin, origen);
+                        cout << "Ingrese el nombre de la estación de destino: ";
+                        getline(cin, destino);
+
+                        int tiempo = linea->calcularTiempoDeLlegada(origen, destino);
+                        if (tiempo > 0) {
+                            cout << "Tiempo estimado de llegada: " << tiempo << " segundos.\n";
+                        } else {
+                            cout << "No se pudo calcular el tiempo de llegada. Asegúrese de que las estaciones ingresadas son correctas y pertenecen a la linea.\n";
+                        }
+                    } else {
+                        cout << "Linea no encontrada. Por favor, verifique el nombre e intente de nuevo." << endl;
+                    }
+
+                    break;
             }
             case 'X':
             {

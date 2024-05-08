@@ -2,7 +2,8 @@
 #include <cstring>
 using namespace std;
 
-Estacion::Estacion(const string& nom, bool transferencia) : nombre(nom), esTransferencia(transferencia) {
+Estacion::Estacion(const string& nom, bool transferencia, int tiempoSiguiente) :
+    nombre(nom), esTransferencia(transferencia),tiempoHastaSiguiente(tiempoSiguiente)  {
 
 }
 
@@ -18,3 +19,10 @@ bool Estacion::esEstacionDeTransferencia() const {
 void Estacion::marcarComoTransferencia() {
         esTransferencia = true;
     }
+int Estacion::getTiempoHastaSiguiente() const {
+    return tiempoHastaSiguiente;
+}
+
+void Estacion::setTiempoHastaSiguiente(int tiempo) {
+    tiempoHastaSiguiente = tiempo;
+}
