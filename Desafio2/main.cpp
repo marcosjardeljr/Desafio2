@@ -45,7 +45,7 @@ void mostrarMenu() {
         switch(opcion) {
             case 'A':
             {
-                int posicion, tiempo;
+                int tiempo;
 
                 cout << "Ingrese el nombre de la linea: ";
                 cin.ignore();
@@ -265,16 +265,16 @@ void mostrarMenu() {
                     linea = redMetro.buscarLinea(nombreLinea);  // Obtener la línea correcta
 
                     if (linea != nullptr) {
-                        cout << "Ingrese el nombre de la estación de origen: ";
+                        cout << "Ingrese el nombre de la estacion de origen: ";
                         getline(cin, origen);
-                        cout << "Ingrese el nombre de la estación de destino: ";
+                        cout << "Ingrese el nombre de la estacion de destino: ";
                         getline(cin, destino);
 
                         int tiempo = linea->calcularTiempoDeLlegada(origen, destino);
                         if (tiempo > 0) {
                             cout << "Tiempo estimado de llegada: " << tiempo << " segundos.\n";
                         } else {
-                            cout << "No se pudo calcular el tiempo de llegada. Asegúrese de que las estaciones ingresadas son correctas y pertenecen a la linea.\n";
+                            cout << "No se pudo calcular el tiempo de llegada. Asegurese de que las estaciones ingresadas son correctas y pertenecen a la linea.\n";
                         }
                     } else {
                         cout << "Linea no encontrada. Por favor, verifique el nombre e intente de nuevo." << endl;

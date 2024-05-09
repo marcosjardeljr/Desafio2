@@ -6,6 +6,7 @@ lineaMetro::lineaMetro
 (const string& nom) : nombre(nom), estaciones(nullptr), cantidadEstaciones(0), capacidadEstaciones(5)
 {
     estaciones = new Estacion*[capacidadEstaciones];
+    tiempos = new int[capacidadEstaciones];
 }
 
 lineaMetro::~lineaMetro() {
@@ -13,11 +14,13 @@ lineaMetro::~lineaMetro() {
         delete estaciones[i];
     }
     delete[] estaciones;
+    delete[] tiempos;
 }
 
 const string& lineaMetro::getNombre() const {
     return nombre;
 }
+
 
 bool lineaMetro::agregarEstacion(Estacion* estacion, int posicion) {
     if (posicion < 0 || posicion > cantidadEstaciones) {
@@ -26,19 +29,30 @@ bool lineaMetro::agregarEstacion(Estacion* estacion, int posicion) {
     if (cantidadEstaciones == capacidadEstaciones) {
         capacidadEstaciones *= 2;
         Estacion** nuevoArray = new Estacion*[capacidadEstaciones];
+        int* nuevosTiempos = new int[capacidadEstaciones - 1];
         for (int i = 0; i < cantidadEstaciones; ++i) {
             nuevoArray[i] = estaciones[i];
+            if (i < cantidadEstaciones - 1) {
+                nuevosTiempos[i] = tiempos[i];
+            }
         }
         delete[] estaciones;
+        delete[] tiempos;
         estaciones = nuevoArray;
+        tiempos = nuevosTiempos;
     }
+
     for (int i = cantidadEstaciones; i > posicion; --i) {
         estaciones[i] = estaciones[i - 1];
+        tiempos[i] = tiempos[i - 1];
     }
     estaciones[posicion] = estacion;
+    tiempos[posicion] = 0; // Asigna un tiempo predeterminado o solicita al usuario
     cantidadEstaciones++;
     return true;
 }
+
+
 
 bool lineaMetro::estacionExiste(const string& nom) const {
     for (int i = 0; i < cantidadEstaciones; ++i) {
@@ -93,21 +107,25 @@ void lineaMetro::setTiempoEntreEstaciones(int index, int tiempo) {
     }
 }
 
-int lineaMetro::calcularTiempoDeLlegada(const std::string& origen, const std::string& destino) const {
+int lineaMetro::calcularTiempoDeLlegada(const string& origen, const string& destino) const {
+    if (!contieneEstacion(origen) || !contieneEstacion(destino)) {
+        return -1;  // Devuelve -1 si alguna de las estaciones no existe
+    }
+
     int tiempoTotal = 0;
     bool empezarConteo = false;
 
-    for (int i = 0; i < cantidadEstaciones; i++) {
+    for (int i = 0; i < cantidadEstaciones - 1; ++i) {
         if (estaciones[i]->getNombre() == origen) {
             empezarConteo = true;
         }
         if (empezarConteo) {
-            if (estaciones[i]->getNombre() == destino) {
-                break;
+            tiempoTotal += tiempos[i];
+            if (estaciones[i+1]->getNombre() == destino) {
+                return tiempoTotal;
             }
-            tiempoTotal += estaciones[i]->getTiempoHastaSiguiente();
         }
     }
 
-    return tiempoTotal;
+    return -1;  // Devuelve -1 si no se encuentra una ruta válida
 }
