@@ -29,7 +29,7 @@ bool redMetro::agregarLinea(lineaMetro* linea) {
 }
 
 int redMetro::getCantidadLineas() const {
-    return cantidadLineas;  // Asume que tienes una variable miembro cantidadLineas que manejas adecuadamente.
+    return cantidadLineas;
 }
 
 lineaMetro* redMetro::buscarLinea(const string& nombre) const {
@@ -38,7 +38,7 @@ lineaMetro* redMetro::buscarLinea(const string& nombre) const {
             return lineas[i];
         }
     }
-    return nullptr;  // Retorna nullptr si no se encuentra la línea con el nombre dado.
+    return nullptr;
 }
 
 void redMetro::mostrarLineas() const {

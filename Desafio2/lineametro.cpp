@@ -47,7 +47,7 @@ bool lineaMetro::agregarEstacion(Estacion* estacion, int posicion) {
         tiempos[i] = tiempos[i - 1];
     }
     estaciones[posicion] = estacion;
-    tiempos[posicion] = 0; // Asigna un tiempo predeterminado o solicita al usuario
+    tiempos[posicion] = 0;
     cantidadEstaciones++;
     return true;
 }
@@ -109,7 +109,7 @@ void lineaMetro::setTiempoEntreEstaciones(int index, int tiempo) {
 
 int lineaMetro::calcularTiempoDeLlegada(const string& origen, const string& destino) const {
     if (!contieneEstacion(origen) || !contieneEstacion(destino)) {
-        return -1;  // Devuelve -1 si alguna de las estaciones no existe
+        return -1;
     }
 
     int tiempoTotal = 0;
@@ -127,5 +127,5 @@ int lineaMetro::calcularTiempoDeLlegada(const string& origen, const string& dest
         }
     }
 
-    return -1;  // Devuelve -1 si no se encuentra una ruta válida
+    return -1;
 }
