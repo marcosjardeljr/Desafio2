@@ -9,7 +9,7 @@ private:
     Estacion** estaciones;
     int cantidadEstaciones;
     int capacidadEstaciones;
-    int tiempos[17];  // Tiempos entre estaciones consecutivas
+    int* tiempos;  // Tiempos entre estaciones consecutivas
     int numEstaciones;
 
 public:
@@ -20,7 +20,7 @@ public:
     int getCantidadEstaciones() const;
     bool contieneEstacion(const string& nom) const;
     const string& getNombre() const;
-    bool estacionExiste(const std::string& nom) const;
+    bool estacionExiste(const string& nom) const;
     bool esPosicionValida(int posicion) const;
     Estacion* getEstacion(int index) const;
     void setTiempoEntreEstaciones(int index, int tiempo);
